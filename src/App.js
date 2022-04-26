@@ -1,6 +1,7 @@
 import { Navigation } from "./routes/Navigation";
 import { Footer } from "./routes/Footer";
 import { SocialLinks } from "./components/Social-Links";
+import { Wave } from "./components/Wave";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ export const Intro = () => {
         <span className="text-muted">Hello, I'm</span>
         <h1 className="text-primary text-4xl">Matthew Malone</h1>
         <SocialLinks />
+        <Wave className={"text-primary"} />
       </div>
     </section>
   );
