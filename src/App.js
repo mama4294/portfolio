@@ -14,7 +14,6 @@ function App() {
           <Intro />
         </ContentSection>
         <Wave type={WAVE_TYPE.base} className={"text-primary"} />
-        <Skills />
         {/* <Wave
           type={WAVE_TYPE.base}
           className={"text-primary origin-center rotate-180"}
@@ -22,6 +21,7 @@ function App() {
         <ContentSection>
           <Projects />
         </ContentSection>
+        <Section id="skills" title="Skills" />
         <Section id="about" title="About" />
         <Section id="contact" title="Contact" />
       </Content>
@@ -49,21 +49,12 @@ export const Intro = () => {
     </section>
   );
 };
-export const Skills = () => {
-  return (
-    <section id="skills" className="shadow-sm">
-      <div className="p-10">
-        <h1 className="text-primary text-4xl">Skills</h1>
-      </div>
-    </section>
-  );
-};
 
 export const Section = ({ id, title }) => {
   return (
     <section id={id} className="shadow-sm">
       <div className="p-10">
-        <h1 className="text-primary text-4xl">{title}</h1>
+        <h1 className="text-primary text-4xl text-center">{title}</h1>
       </div>
     </section>
   );
