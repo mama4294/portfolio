@@ -12,7 +12,7 @@ export const SocialLinks = () => {
             focusable="false"
             data-prefix="fab"
             data-icon="github"
-            className="w-6 h-6 inline-block text-primary"
+            className="w-6 h-6 inline-block text-inverted"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 496 512"
