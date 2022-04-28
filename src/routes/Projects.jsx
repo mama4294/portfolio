@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../components/Button";
+import example from "../assets/exampleSite.jpeg"
 
 export const Projects = () => {
     const items = ["All", "Web", "Industrial Automation", "PowerApps"];
@@ -41,9 +42,16 @@ export const Projects = () => {
 
   const ProjectCard = ({project}) => {
       return (
-          <div className="pointer bg-primary p-4 text-white rounded-md">
-                {project}
-          </div>
+          <button className="pointer relative group bg-primary p-4 text-white rounded-md">
+              <div className="p-4 ">
+              {/* <div className="filter group-hover:grayscale p-4 "> */}
+              <img className="rounded-md" src={example} alt="site" />
+              </div>
+              <div className="group-hover:block hidden absolute top-1/3 left-0 right-0 z-10">
+              <p className="bg-muted px-4 py-2 m-2 rounded-md">Learn More</p>
+              </div>
+              <p className="text-center">{project}</p>
+          </button>
       )
   }
 
