@@ -12,8 +12,8 @@ export const Projects = () => {
     };
   
     return (
-      <section id="projects">
-        <h1 className="text-primary text-4xl text-center m-4">Projects</h1>
+      <section id="projects" className="p-10">
+        <h1 className="text-primary text-4xl text-center m-4">Projects<span className="text-default">.</span></h1>
         <ProjectFilterSelector items={items} projectFilter={projectFilter} handleClick={handleClick} />
         <div className="flex flex-wrap justify-center">
             {projects.map((project) => (
