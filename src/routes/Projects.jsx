@@ -12,7 +12,7 @@ export const Projects = () => {
     };
   
     return (
-      <section id="projects" className="">
+      <section id="projects">
         <h1 className="text-primary text-4xl text-center m-4">Projects</h1>
         <ProjectFilterSelector items={items} projectFilter={projectFilter} handleClick={handleClick} />
         <div className="flex flex-wrap justify-center">

@@ -28,7 +28,7 @@ const {name, email, message} = formFields;
 
 
     return(
-        <div className="m-4">
+        <section className="m-4" id="contact">
             <div className="p-10">
                 <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>
@@ -40,6 +40,6 @@ const {name, email, message} = formFields;
                 <Button type="form">Send Message</Button>
                 </form>
             </div>
-        </div>
+        </section>
     )
 }

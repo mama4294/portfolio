@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Link, animateScroll as scroll} from 'react-scroll'
+import { Hamburger } from '../components/Hamburger';
 
 export const Navigation = () => {
     const [scrolledFromTop, setScrolledFromTop] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     const checkScrollPosition = () => {
         if (window.scrollY >= 50) {
@@ -12,22 +14,31 @@ export const Navigation = () => {
         }
       };
 
+      const toggleMobileMenu = () =>{
+          setMobileMenuOpen(prev => !prev)
+      }
+
     //Determine if the nav should change colors on scroll
   window.addEventListener("scroll", checkScrollPosition);
 
   return (
     <nav className={`fixed z-50 top-0 w-full ease-in-out duration-300
     ${scrolledFromTop ? "bg-white shadow-lg" : "bg-primary"}`}>
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+        {/* Desktop Menu */}
+        <div className="hidden sm:block mx-auto px-4 md:px-6 lg:px-8">
+            <div className="relative flex items-center justify-between h-16">
                 <ul>
                 <NavItem to="home" scrolledFromTop={scrolledFromTop}>Home</NavItem>
-                <NavItem to="skills" scrolledFromTop={scrolledFromTop}>Skills</NavItem>
                 <NavItem to="projects" scrolledFromTop={scrolledFromTop}>Projects</NavItem>
+                <NavItem to="skills" scrolledFromTop={scrolledFromTop}>Skills</NavItem>
                 <NavItem to="about" scrolledFromTop={scrolledFromTop}>About</NavItem>
                 <NavItem to="contact" scrolledFromTop={scrolledFromTop}>Contact</NavItem>
                 </ul>
             </div>
+        </div>
+        {/* Mobile Menu */}
+        <div className='sm:hidden mx-auto p-4 h-full flex justify-end'>
+                <Hamburger isOpen={mobileMenuOpen} onClick={toggleMobileMenu} color={scrolledFromTop ? "text-primary" : "text-white"}/>
         </div>
     </nav>
   )
