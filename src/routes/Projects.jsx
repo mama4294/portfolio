@@ -3,7 +3,7 @@ import { Button } from "../components/Button";
 import example from "../assets/exampleSite.jpeg"
 
 export const Projects = () => {
-    const items = ["All", "Web", "Industrial Automation", "PowerApps"];
+    const items = ["All", "Web", "Industrial Automation", "Corporate"];
     const [projectFilter, setProjectFilter] = useState(()=>items[0]);
     const projects = ["Project 1", "Project 2", "Project 3", "Project 4"];
   

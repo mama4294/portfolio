@@ -30,7 +30,7 @@ const {name, email, message} = formFields;
     return(
         <div className="m-4">
             <div className="p-10">
-                <h1 className="text-primary text-4xl text-center">Contact</h1>
+                <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>
             <div className="w-full md:w-1/2 m-auto">
                 <form onSubmit={handleSubmit}>

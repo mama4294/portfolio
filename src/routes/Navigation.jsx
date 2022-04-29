@@ -35,7 +35,7 @@ export const Navigation = () => {
 
 const NavItem = ({to, children, scrolledFromTop}) =>{
     return(
-        <Link to={to} spy={true} smooth={true} offset={50} duration={500} className={`cursor-pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-muted hover:text-default" : "text-inverted hover:text-white"} `}>
+        <Link to={to} spy={true} smooth={true} offset={50} duration={500} className={`cursor-pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-primary hover:text-default" : "text-inverted hover:text-white"} `}>
         {children}
         </Link>
     )

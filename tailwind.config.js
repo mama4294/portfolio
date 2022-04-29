@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        transparent: "transparent",
         default: "rgb(56, 56, 56)",
         primary: "rgb(106, 152, 240)",
         muted: "rgb(73, 97, 220)",
