@@ -31,7 +31,7 @@ export const Projects = () => {
     <ul className="flex justify-center w-full">
         {items.map((item) => (
             <li key={item}>
-                <Button selected={projectFilter === item} onClick={handleClick}>
+                <Button type="selector" selected={projectFilter === item} onClick={handleClick}>
                 {item}
                 </Button>
              </li>

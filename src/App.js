@@ -4,6 +4,7 @@ import { Footer } from "./routes/Footer";
 import { SocialLinks } from "./components/Social-Links";
 import { Wave, WAVE_TYPE } from "./components/Wave";
 import { Projects } from "./routes/Projects";
+import { Contact } from "./routes/Contact";
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
         </ContentSection>
         <Section id="skills" title="Skills" />
         <Section id="about" title="About" />
-        <Section id="contact" title="Contact" />
+        <ContentSection className="bg-slate-100 pb-10">
+          <Contact />
+        </ContentSection>
       </Content>
       <Footer />
     </div>
