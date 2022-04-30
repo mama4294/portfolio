@@ -6,6 +6,7 @@ module.exports = {
         transparent: "transparent",
         default: "rgb(56, 56, 56)",
         primary: "rgb(106, 152, 240)",
+        dark: "rgb(71 85 105);",
         muted: "rgb(73, 97, 220)",
         inverted: "rgb(199, 208, 255)",
       },

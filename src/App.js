@@ -6,6 +6,7 @@ import { Projects } from "./routes/Projects";
 import { Contact } from "./routes/Contact";
 import { Skills } from "./routes/Skills";
 import { About } from "./routes/About";
+import { Tilt } from "./components/Tilt";
 function App() {
   return (
     <div className="flex flex-col h-auto">
@@ -19,7 +20,9 @@ function App() {
           className={"text-primary origin-center rotate-180"}
         />
         <Skills />
+        <Tilt className={"bg-dark text-primary"} />
         <About />
+        {/* <Tilt className={"bg-slate-100  text-dark"} /> */}
         <Contact />
         <Footer />
       </main>
