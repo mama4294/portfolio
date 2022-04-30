@@ -34,9 +34,9 @@ const {name, email, message} = formFields;
             </div>
             <div className="w-full md:w-1/2 m-auto">
                 <form onSubmit={handleSubmit}>
-                <FormInput type="text" value={name} label="Name" name="name" onChange={handleChange}/>
-                <FormInput type="email" value={email} label="Email" name="email" onChange={handleChange}/>
-                <MultiLineInput value={message} label="Message" name="message" onChange={handleChange}/>
+                <FormInput type="text" value={name} label="Name" name="name" placeholder="John Doe" onChange={handleChange}/>
+                <FormInput type="email" value={email} label="Email" name="email" placeholder="example@gmail.com" onChange={handleChange}/>
+                <MultiLineInput value={message} label="Message" name="message" placeholder="Type your message here" onChange={handleChange}/>
                 <Button type="form">Send Message</Button>
                 </form>
             </div>

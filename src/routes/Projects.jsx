@@ -48,7 +48,7 @@ export const Projects = () => {
               <img className="rounded-md" src={example} alt="site" />
               </div>
               <div className="group-hover:block hidden absolute top-1/3 left-0 right-0 z-10">
-              <p className="bg-muted px-4 py-2 m-2 rounded-md">Learn More</p>
+              <p className="bg-muted px-4 py-2 m-2 rounded-md inline-block">Learn More</p>
               </div>
               <p className="text-center">{project}</p>
           </button>
