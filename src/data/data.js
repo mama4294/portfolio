@@ -1,0 +1,51 @@
+export const projects = [
+  {
+    id: 1,
+    title: "E-commerce",
+    type: "Web",
+    description: "An E-commerce website for a clothing store",
+    picture: "../assets/exampleSite.jpeg",
+  },
+  {
+    id: 2,
+    title: "Wordle",
+    type: "Web",
+    description: "A daily word game",
+    picture: "../assets/exampleSite.jpeg",
+  },
+  {
+    id: 3,
+    title: "Engineering Toolbox",
+    type: "Web",
+    description: "A toolbox for process engineering calculations",
+    picture: "../assets/exampleSite.jpeg",
+  },
+  {
+    id: 4,
+    title: "Automated Fermenter Cleaning",
+    type: "Industrial Automation",
+    description: "A program for automated fermenter cleaning",
+    picture: "../assets/exampleSite.jpeg",
+  },
+  {
+    id: 5,
+    title: "Behavioral Based Safety",
+    type: "Corporate",
+    description: "An app for recording and analyzing safety data",
+    picture: "../assets/exampleSite.jpeg",
+  },
+  {
+    id: 6,
+    title: "Maintenance Checks",
+    type: "Corporate",
+    description: "An app for recording daily maintenance checks",
+    picture: "../assets/exampleSite.jpeg",
+  },
+  {
+    id: 7,
+    title: "Factory Commissioning",
+    type: "Corporate",
+    description: "A factory commissioning and startup tracking app",
+    picture: "../assets/exampleSite.jpeg",
+  },
+];

@@ -28,7 +28,7 @@ const {name, email, message} = formFields;
 
 
     return(
-        <section className="bg-slate-100 p-4 pb-10" id="contact">
+        <section className="bg-light p-4 pb-10" id="contact">
             <div className="py-10">
                 <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>

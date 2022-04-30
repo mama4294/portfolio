@@ -7,7 +7,20 @@ import { Contact } from "./routes/Contact";
 import { Skills } from "./routes/Skills";
 import { About } from "./routes/About";
 import { Tilt } from "./components/Tilt";
+import { Routes, Route } from "react-router-dom";
+import { ProjectDetails } from "./routes/ProjectDetails";
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/:projectTitle" element={<ProjectDetails />} />
+    </Routes>
+  );
+}
+
+export default App;
+
+const Home = () => {
   return (
     <div className="flex flex-col h-auto">
       <Navigation />
@@ -22,12 +35,9 @@ function App() {
         <Skills />
         <Tilt className={"bg-dark text-primary"} />
         <About />
-        {/* <Tilt className={"bg-slate-100  text-dark"} /> */}
         <Contact />
         <Footer />
       </main>
     </div>
   );
-}
-
-export default App;
+};
