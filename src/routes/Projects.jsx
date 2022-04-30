@@ -3,7 +3,7 @@ import { Button } from "../components/Button";
 import example from "../assets/exampleSite.jpeg"
 
 export const Projects = () => {
-    const items = ["All", "Web", "Industrial Automation", "Corporate"];
+    const items = ["Web", "Industrial Automation", "Corporate"];
     const [projectFilter, setProjectFilter] = useState(()=>items[0]);
     const projects = ["Project 1", "Project 2", "Project 3", "Project 4"];
   
@@ -28,7 +28,7 @@ export const Projects = () => {
 
   const ProjectFilterSelector = ({items, projectFilter,handleClick}) => {
     return (
-    <ul className="flex justify-center w-full">
+    <ul className="flex justify-center items-center	w-full">
         {items.map((item) => (
             <li key={item}>
                 <Button type="selector" selected={projectFilter === item} onClick={handleClick}>

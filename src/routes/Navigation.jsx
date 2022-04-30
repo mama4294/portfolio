@@ -6,23 +6,24 @@ export const Navigation = () => {
     const [scrolledFromTop, setScrolledFromTop] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    const checkScrollPosition = () => {
+    const checkScrollPosition = (e) => {
+      const window = e.currentTarget;
         if (window.scrollY >= 50) {
           setScrolledFromTop(true);
         } else {
           setScrolledFromTop(false);
         }
+        // console.log(window.scrollY)
       };
-
+      
+      //Determine if the nav should change colors on scroll
+      window.addEventListener("scroll", checkScrollPosition);
+      
       const toggleMobileMenu = () =>{
           setMobileMenuOpen(prev => !prev)
       }
-
-    //Determine if the nav should change colors on scroll
-  window.addEventListener("scroll", checkScrollPosition);
-
   return (
-    <nav className={`sticky z-50 top-0 w-full ease-in-out duration-300
+    <nav className={`sticky top-0 w-full ease-in-out duration-300 z-50
     ${scrolledFromTop ? "bg-white shadow-lg" : "bg-primary"}`}>
         {/* Desktop Menu */}
         <div className="hidden sm:block mx-auto px-4 md:px-6 lg:px-8">
