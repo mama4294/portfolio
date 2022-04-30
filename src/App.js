@@ -9,20 +9,21 @@ import { About } from "./routes/About";
 
 function App() {
   return (
-    <div className="flex flex-col h-screen justify-between">
+    <div className="h-screen overflow-scroll">
+      {/* <div className="flex flex-col h-screen justify-between"> */}
       <Navigation />
-      <Content>
-        <Intro />
-        <Wave type={WAVE_TYPE.base} className={"text-primary"} />
-        <Projects />
-        <Wave
-          type={WAVE_TYPE.base}
-          className={"text-primary origin-center rotate-180"}
-        />
-        <Skills />
-        <About />
-        <Contact />
-      </Content>
+      {/* <Content> */}
+      <Intro />
+      <Wave type={WAVE_TYPE.base} className={"text-primary"} />
+      <Projects />
+      <Wave
+        type={WAVE_TYPE.base}
+        className={"text-primary origin-center rotate-180"}
+      />
+      <Skills />
+      <About />
+      <Contact />
+      {/* </Content> */}
       <Footer />
     </div>
   );

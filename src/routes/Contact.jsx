@@ -29,7 +29,7 @@ const {name, email, message} = formFields;
 
     return(
         <section className="bg-slate-100 p-4 pb-10" id="contact">
-            <div className="p-10">
+            <div className="py-10">
                 <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>
             <div className="w-full md:w-1/2 m-auto">

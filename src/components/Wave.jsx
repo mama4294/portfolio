@@ -11,6 +11,6 @@ const getWave = (type = WAVE_TYPE.base) =>
 export const Wave = ({type, className}) =>{
     const WavePath = getWave(type);
     return(
-        <svg className={className} viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="currentColor" fillOpacity="1" d={WavePath}></path></svg>
+        <svg className={className} viewBox="0 0 1199 120" preserveAspectRatio="none"><path fill="currentColor" fillOpacity="1" d={WavePath}></path></svg>
     )
 }

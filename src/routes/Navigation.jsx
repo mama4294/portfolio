@@ -22,7 +22,7 @@ export const Navigation = () => {
   window.addEventListener("scroll", checkScrollPosition);
 
   return (
-    <nav className={`fixed z-50 top-0 w-full ease-in-out duration-300
+    <nav className={`sticky z-50 top-0 w-full ease-in-out duration-300
     ${scrolledFromTop ? "bg-white shadow-lg" : "bg-primary"}`}>
         {/* Desktop Menu */}
         <div className="hidden sm:block mx-auto px-4 md:px-6 lg:px-8">
@@ -37,7 +37,7 @@ export const Navigation = () => {
             </div>
         </div>
         {/* Mobile Menu */}
-        <div className='sm:hidden mx-auto p-4 h-full flex justify-end'>
+        <div className='sm:hidden mx-auto p-4 h-16 ml-auto'>
                 <Hamburger isOpen={mobileMenuOpen} onClick={toggleMobileMenu} color={scrolledFromTop ? "text-primary" : "text-white"}/>
         </div>
     </nav>
