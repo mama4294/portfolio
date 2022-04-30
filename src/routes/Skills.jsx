@@ -3,7 +3,7 @@ export const Skills = () => {
   return (
     <section className="bg-primary p-10" id="skills">
         <h1 className="text-white text-4xl text-center">Skills<span className="text-default">.</span></h1>
-        <div className="md:p-5">
+        <div className="md:p-5 md:w-9/12 m-auto">
           <SkillHeader>Web</SkillHeader>
           <SkillList>
             <SkillItem>HTML5</SkillItem>
