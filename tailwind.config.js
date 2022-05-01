@@ -12,10 +12,10 @@ module.exports = {
         inverted: "rgb(199, 208, 255)",
       },
     },
-  },
-  screens: {
-    xs: "300px",
-    // => @media (min-width: 300px) { ... }
+    screens: {
+      xs: "360px",
+      // => @media (min-width: 360px) { ... }
+    },
   },
   plugins: [],
 };
