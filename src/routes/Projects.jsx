@@ -14,7 +14,7 @@ export const Projects = () => {
     };
   
     return (
-      <section id="projects" className="p-10">
+      <section id="projects" className="p-2 sm:p-10">
         <h1 className="text-primary text-4xl text-center m-4">Projects<span className="text-default">.</span></h1>
         <ProjectFilterSelector items={items} projectFilter={projectFilter} handleClick={handleClick} />
         <div className="flex flex-wrap justify-center">
@@ -30,7 +30,7 @@ export const Projects = () => {
 
   const ProjectFilterSelector = ({items, projectFilter,handleClick}) => {
     return (
-    <ul className="flex justify-center items-center	w-full">
+    <ul className="flex xs:flex-nowrap flex-wrap justify-center items-center	w-full">
         {items.map((item) => (
             <li key={item}>
                 <Button type="selector" selected={projectFilter === item} onClick={handleClick}>
