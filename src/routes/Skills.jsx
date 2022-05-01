@@ -12,6 +12,7 @@ export const Skills = () => {
             <SkillItem>JSX</SkillItem>
             <SkillItem>React</SkillItem>
             <SkillItem>JSON</SkillItem>
+            <SkillItem>Firebase</SkillItem>
             <SkillItem>Tailwinds CSS</SkillItem>
             <SkillItem>Git/GitHub</SkillItem>
           </SkillList>
