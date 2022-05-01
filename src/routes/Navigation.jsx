@@ -38,18 +38,34 @@ export const Navigation = () => {
             </div>
         </div>
         {/* Mobile Menu */}
-        <div className='sm:hidden mx-auto p-4 h-16 ml-auto'>
+        <div className='sm:hidden mx-auto ml-auto'>
                 <Hamburger isOpen={mobileMenuOpen} onClick={toggleMobileMenu} color={scrolledFromTop ? "text-primary" : "text-white"}/>
-        </div>
+                {mobileMenuOpen && 
+                <ul className='px-2 pb-3 space-y-1 sm:px-3'>
+                  <MobileNavItem to="home" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Home</MobileNavItem>
+                  <MobileNavItem to="projects" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Projects</MobileNavItem>
+                  <MobileNavItem to="skills" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Skills</MobileNavItem>
+                  <MobileNavItem to="about" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>About</MobileNavItem>
+                  <MobileNavItem to="contact" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Contact</MobileNavItem>
+                </ul>}
+            </div>
     </nav>
   )
 }
 
 const NavItem = ({to, children, scrolledFromTop}) =>{
     return(
-        <Link to={to} offset={-64} spy={true} smooth={true} duration={500} className={`cursor-pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
+        <Link to={to} offset={-64} spy={true} smooth={true} duration={500} className={`pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
         {children}
         </Link>
     )
+}
+
+const MobileNavItem = ({to, children, scrolledFromTop, onClick}) =>{
+  return(
+      <Link onClick={onClick} to={to} offset={-272} spy={true} smooth={true} duration={500} className={`block pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
+      {children}
+      </Link>
+  )
 }
 
