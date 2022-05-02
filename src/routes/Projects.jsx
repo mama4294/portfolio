@@ -19,7 +19,7 @@ export const Projects = () => {
         <ProjectFilterSelector items={items} projectFilter={projectFilter} handleClick={handleClick} />
           <div className="flex flex-wrap justify-center">
             {filteredProjects.map((project) => (
-                <div className="w-64 h-64 m-4" key={project.id}>
+                <div className="w-72 h-72 m-4" key={project.id}>
                     <ProjectCard project={project}/>
                 </div>
             ))}
@@ -58,12 +58,12 @@ export const Projects = () => {
       return (
           <button className="pointer relative group bg-primary p-4 text-white rounded-md" onClick={handleClick}>
               <div className="p-4 ">
-                <img className="rounded-md w-44 h-44" src={picture ? process.env.PUBLIC_URL + picture : example} alt="site" />
+                <img className="rounded-md w-52 h-52" src={picture ? process.env.PUBLIC_URL + picture : example} alt="site" />
               </div>
               <div className="group-hover:block hidden absolute top-1/3 left-0 right-0 z-10">
                 <p className="bg-muted px-4 py-2 m-2 rounded-md inline-block">Learn More</p>
               </div>
-              <p className="text-center">{title}</p>
+              <p className="text-center text-sm">{title}</p>
           </button>
       )
   }
