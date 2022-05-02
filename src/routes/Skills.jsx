@@ -1,4 +1,7 @@
 
+import { SkillList } from "../components/SkillList"
+import { SkillItem } from "../components/SkillItem"
+
 export const Skills = () => {
   return (
     <section className="bg-primary p-10" id="skills">
@@ -41,14 +44,6 @@ const SkillHeader = ({children}) =>  {
   )
 }
 
-const SkillList = ({children}) =>  {
-  return(
-    <ul className="my-2">{children}</ul>
-  )
-}
 
-const SkillItem = ({children}) =>  {
-  return(
-    <li className="inline-block px-2 py-1 m-1 text-primary bg-white rounded-sm">{children}</li>
-  )
-}
+
+
