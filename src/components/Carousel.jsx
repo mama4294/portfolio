@@ -1,26 +1,35 @@
 import { useState } from "react";
 import Swipe from "react-easy-swipe";
+import {useEventLister} from "../helpers/helper-functions"
 
 
 export const Carousel= ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handleNextSlide = () => {
-    let newSlide = currentSlide === images.length - 1 ? 0 : currentSlide + 1;
-    setCurrentSlide(newSlide);
-  };
 
   const handlePrevSlide = () => {
     let newSlide = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
     setCurrentSlide(newSlide);
   };
 
+  const handleNextSlide = () => {
+    let newSlide = currentSlide === images.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(newSlide);
+  };
+
+  const handleKeyPress = (event) => {
+    console.log(event.key);
+    if(event.key === "ArrowLeft") handlePrevSlide()
+    if(event.key === "ArrowRight") handleNextSlide()
+  };
+
+  useEventLister("keydown", handleKeyPress);
+
 
   return (
-    <div className="relative">
+    <div className="relative p-1 sm:w-[50vh] m-auto">
       <button
         onClick={handlePrevSlide}
-        className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
+        className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 hover:text-gray-200 z-20"
       >
           <svg 
             className="h-8 w-8"
@@ -34,7 +43,7 @@ export const Carousel= ({ images }) => {
             <path d="M24.998,40.094c1.338,1.352,1.338,3.541,0,4.893c-1.338,1.35-3.506,1.352-4.846,0L1.004,25.447  c-1.338-1.352-1.338-3.543,0-4.895L20.152,1.014c1.34-1.352,3.506-1.352,4.846,0c1.338,1.352,1.338,3.541,0,4.893L9.295,23  L24.998,40.094z"/>
          </svg>
       </button>
-      <div className="w-full h-[50vh] flex overflow-hidden relative m-auto">
+      <div className="w-full flex overflow-hidden relative m-auto">
         <Swipe
           onSwipeLeft={handleNextSlide}
           onSwipeRight={handlePrevSlide}
@@ -45,7 +54,7 @@ export const Carousel= ({ images }) => {
               return (
                 <img
                     key={index}
-                    className="bg-contain bg-center"
+                    className="w-full aspect-square rounded-md"
                     src={process.env.PUBLIC_URL + image.url}
                     alt={image.url}
                 />
@@ -56,7 +65,7 @@ export const Carousel= ({ images }) => {
       </div>
       <button
         onClick={handleNextSlide}
-        className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
+        className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 hover:text-gray-200 z-20"
       >
           <svg 
             className="h-8 w-8"
@@ -77,8 +86,8 @@ export const Carousel= ({ images }) => {
             <div
               className={
                 index === currentSlide
-                  ? "h-4 w-4 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
-                  : "h-4 w-4 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
+                  ? "h-3 w-3 bg-primary rounded-full mx-2 mb-2 cursor-pointer"
+                  : "h-3 w-3 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
               }
               key={index}
               onClick={() => {

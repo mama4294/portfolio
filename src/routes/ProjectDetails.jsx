@@ -14,7 +14,7 @@ export const ProjectDetails = () => {
     }
 
   return (
-    <section className="bg-light p-4 pb-10 h-screen">
+    <section className="bg-light p-4 pb-10 min-h-screen">
         <button onClick={handleExit} className="ml-auto">
             <svg
             className="h-8 w-8 text-default"
