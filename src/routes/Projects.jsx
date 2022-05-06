@@ -55,8 +55,6 @@ export const Projects = () => {
     }
     const {pictures, title} = project
     let picture = example
-    console.log(title)
-    console.log(pictures)
 
     if (pictures !== undefined && pictures.length){
       picture = pictures[0]

@@ -17,7 +17,6 @@ export const Carousel= ({ images }) => {
   };
 
   const handleKeyPress = (event) => {
-    console.log(event.key);
     if(event.key === "ArrowLeft") handlePrevSlide()
     if(event.key === "ArrowRight") handleNextSlide()
   };

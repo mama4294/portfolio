@@ -46,7 +46,7 @@ export const ProjectDetails = () => {
           </div>}
           {technologies && 
             <SkillList>
-            {technologies.map(tech => <SkillItem>{tech}</SkillItem>)}
+            {technologies.map((tech,index) => <SkillItem key={index}>{tech}</SkillItem>)}
             </SkillList>}
           {contrubutors && 
           <div className="mb-4">
