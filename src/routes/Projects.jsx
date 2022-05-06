@@ -6,10 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 export const Projects = () => {
     const items = ["Web", "Industrial Automation", "Mobile"];
-    const [projectFilter, setProjectFilter] = useState(()=>items[0]);
+    const [projectFilter, setProjectFilter] = useState(()=>{
+      // get locally stored project filter
+      const saved = localStorage.getItem("projectfilter");
+      const filterInt = JSON.parse(saved);
+      return filterInt || items[0];
+    });
     const filteredProjects = projects.filter((proj) => proj.type === projectFilter)
   
     const handleClick = (e) => {
+      localStorage.setItem("projectfilter", JSON.stringify(e.target.innerText));
       setProjectFilter(e.target.innerText);
     };
   
