@@ -3,6 +3,7 @@ import { Button } from "../components/Button";
 import example from "../assets/exampleSite.jpeg"
 import { projects } from "../data/data";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"
 
 export const Projects = () => {
     const items = ["Web", "Industrial Automation", "Mobile"];
@@ -60,7 +61,13 @@ export const Projects = () => {
       picture = pictures[0]
     }
       return (
-          <button className="group pointer w-64 relative bg-primary p-4 text-white rounded-md" onClick={handleClick}>
+          <motion.button className="group pointer w-64 relative bg-primary p-4 text-white rounded-md" onClick={handleClick}     
+          layout
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          >
               <div className="p-4">
                 <img className="rounded-md m-auto h-64 w-auto group-hover:scale-110" src={picture ? process.env.PUBLIC_URL + picture : example} alt="site" />
               </div>
@@ -68,7 +75,7 @@ export const Projects = () => {
                 <p className="bg-muted px-4 py-2 m-2 rounded-md inline-block">Learn More</p>
               </div>
               <p className="text-center text-sm">{title}</p>
-          </button>
+          </motion.button>
       )
   }
 
