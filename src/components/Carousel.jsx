@@ -23,7 +23,7 @@ export const Carousel= ({ images }) => {
   };
 
   useEventLister("keydown", handleKeyPress);
-
+  if(images === undefined) return null
 
   return (
     <div className="relative p-1 sm:w-[50vh] m-auto">
@@ -54,9 +54,9 @@ export const Carousel= ({ images }) => {
               return (
                 <img
                     key={index}
-                    className="w-full aspect-square rounded-md"
-                    src={process.env.PUBLIC_URL + image.url}
-                    alt={image.url}
+                    className="w-full aspect-auto rounded-md"
+                    src={process.env.PUBLIC_URL + image}
+                    alt={image}
                 />
               );
             }

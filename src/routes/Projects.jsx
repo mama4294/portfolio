@@ -5,7 +5,7 @@ import { projects } from "../data/data";
 import { useNavigate } from "react-router-dom";
 
 export const Projects = () => {
-    const items = ["Web", "Industrial Automation", "Corporate"];
+    const items = ["Web", "Industrial Automation", "Mobile"];
     const [projectFilter, setProjectFilter] = useState(()=>items[0]);
     const filteredProjects = projects.filter((proj) => proj.type === projectFilter)
   
@@ -19,7 +19,7 @@ export const Projects = () => {
         <ProjectFilterSelector items={items} projectFilter={projectFilter} handleClick={handleClick} />
           <div className="flex flex-wrap justify-center">
             {filteredProjects.map((project) => (
-                <div className="w-72 h-72 m-4" key={project.id}>
+                <div className="m-4" key={project.id}>
                     <ProjectCard project={project}/>
                 </div>
             ))}
@@ -30,7 +30,7 @@ export const Projects = () => {
 
   const ProjectFilterSelector = ({items, projectFilter,handleClick}) => {
     return (
-    <ul className="flex xs:flex-nowrap flex-wrap justify-center items-center	w-full">
+    <ul className="flex xs:flex-nowrap flex-wrap justify-center items-center w-full">
         {items.map((item) => (
             <li key={item}>
                 <Button type="selector" selected={projectFilter === item} onClick={handleClick}>
@@ -56,9 +56,9 @@ export const Projects = () => {
       picture = pictures[0]
     }
       return (
-          <button className="group pointer relative bg-primary p-4 text-white rounded-md" onClick={handleClick}>
-              <div className="p-4 ">
-                <img className="rounded-md w-52 h-52 group-hover:scale-110" src={picture ? process.env.PUBLIC_URL + picture : example} alt="site" />
+          <button className="group pointer w-64 relative bg-primary p-4 text-white rounded-md" onClick={handleClick}>
+              <div className="p-4">
+                <img className="rounded-md m-auto h-64 w-auto group-hover:scale-110" src={picture ? process.env.PUBLIC_URL + picture : example} alt="site" />
               </div>
               <div className="group-hover:block hidden absolute top-1/3 left-0 right-0 z-10">
                 <p className="bg-muted px-4 py-2 m-2 rounded-md inline-block">Learn More</p>

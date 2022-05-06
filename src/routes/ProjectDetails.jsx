@@ -2,12 +2,14 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import {projects} from "../data/data"
 import  Carousel  from "../components/Carousel"
+import {SkillItem} from "../components/SkillItem" 
+import {SkillList} from "../components/SkillList" 
 
 export const ProjectDetails = () => {
     let navigate = useNavigate();
     const { projectTitle } = useParams()
     const project = projects.find(proj => proj.title === projectTitle)
-    const {title, description, picture, details, contrubutors, technologies, gitHubUrl, liveUrl} = project
+    const {title, description, pictures, details, contrubutors, technologies, gitHubUrl, liveUrl} = project
     const testPictures= [{id:1, url: "/wordle-1.png"}, {id:2, url: "/wordle-2.png"}, {id:3, url:"/wordle-3.png"}]
     const handleExit = () =>{
         navigate(-1)
@@ -42,17 +44,16 @@ export const ProjectDetails = () => {
             <h1 className='text-lg text-primary'>Description</h1>
             <p className="">{details}</p>
           </div>}
+          {technologies && 
+            <SkillList>
+            {technologies.map(tech => <SkillItem>{tech}</SkillItem>)}
+            </SkillList>}
           {contrubutors && 
           <div className="mb-4">
             <h1 className='text-lg text-primary'>My Role</h1>
             <p className="">{contrubutors}</p>
           </div>}
-          {/* {technologies && 
-            <SkillList>
-            {technologies.map(tech => <SkillItem>{tech}</SkillItem>)}
-            </SkillList>} */}
-          {picture && <img className="mb-5 rounded-md w-full border-8 border-white" src={process.env.PUBLIC_URL + picture} alt={title} />}
-          <Carousel images={testPictures}/>
+          <Carousel images={pictures}/>
         </main>
    
     </div>
