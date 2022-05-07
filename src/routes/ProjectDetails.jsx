@@ -9,8 +9,7 @@ export const ProjectDetails = () => {
     let navigate = useNavigate();
     const { projectTitle } = useParams()
     const project = projects.find(proj => proj.title === projectTitle)
-    const {title, description, pictures, details, contrubutors, technologies, gitHubUrl, liveUrl} = project
-    const testPictures= [{id:1, url: "/wordle-1.png"}, {id:2, url: "/wordle-2.png"}, {id:3, url:"/wordle-3.png"}]
+    const {title, description, pictures, details, features, contrubutors, technologies, gitHubUrl, liveUrl} = project
     const handleExit = () =>{
         navigate(-1)
     }
@@ -31,7 +30,7 @@ export const ProjectDetails = () => {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
               </button>
-    <div className="py-10">
+    <div className="py-10 max-w-2xl mx-auto">
         <h1 className="text-primary text-2xl sm:text-4xl text-center">{title}<span className="text-default">.</span></h1>
         <p className="text-default text-l text-center">{description}</p>
         <div className="flex justify-center m-4">
@@ -46,13 +45,20 @@ export const ProjectDetails = () => {
           </div>}
           {technologies && 
             <SkillList>
+            <h1 className='text-lg text-primary'>Technologies</h1>
             {technologies.map((tech,index) => <SkillItem key={index}>{tech}</SkillItem>)}
             </SkillList>}
-          {contrubutors && 
+            {contrubutors && 
           <div className="mb-4">
             <h1 className='text-lg text-primary'>My Role</h1>
             <p className="">{contrubutors}</p>
           </div>}
+          {features && 
+          <SkillList>
+          <h1 className='text-lg text-primary'>Features</h1>
+          {features.map((feature,index) => <SkillItem key={index}>{feature}</SkillItem>)}
+          </SkillList>} 
+
           <Carousel images={pictures}/>
         </main>
    
@@ -60,6 +66,7 @@ export const ProjectDetails = () => {
 </section>
   )
 }
+
 
 const LinkButton = ({title, url}) =>{
   return(
