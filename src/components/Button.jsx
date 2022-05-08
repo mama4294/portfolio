@@ -1,4 +1,4 @@
-export const Button = ({ children, selected, onClick, type }) => {
+export const Button = ({ children, selected, onClick, type,}) => {
 
     const getStyle = (type) => {
         let style = ''
@@ -11,6 +11,9 @@ export const Button = ({ children, selected, onClick, type }) => {
             case 'form':
             style = `pointer px-4 py-2 my-2 rounded-md bg-primary text-white w-full border-white border-2  hover:bg-white hover:text-primary hover:border-slate-300`
             break
+            case 'invert':
+              style = `pointer px-4 py-2 m-2 rounded-md bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white hover:border-white`
+              break
           default:
             style = `pointer px-4 py-2 rounded-md bg-primary text-white`
         }

@@ -4,15 +4,21 @@ import {projects} from "../data/data"
 import {SkillItem} from "../components/SkillItem" 
 import {SkillList} from "../components/SkillList" 
 import { Carousel } from '../components/Carousel'
+import { PageNotFound } from './PageNotFound'
 
 export const ProjectDetails = () => {
     let navigate = useNavigate();
     const { projectTitle } = useParams()
     const project = projects.find(proj => proj.title === projectTitle)
+    
+    if (project === undefined) return <PageNotFound/>
+    
     const {title, description, pictures, details, features, contrubutors, technologies, gitHubUrl, liveUrl} = project
     const handleExit = () =>{
         navigate(-1)
     }
+
+
 
   return (
     <section className="bg-light p-4 pb-10 min-h-screen">

@@ -24,7 +24,6 @@ const {name, email, message} = formFields;
             </div>
             <div className="w-full md:w-1/2 m-auto">
                 <form 
-                    onSubmit="submit" 
                     name="portfolio-contact" 
                     method="POST" 
                     data-netlify="true"
