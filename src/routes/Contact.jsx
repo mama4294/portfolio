@@ -18,12 +18,16 @@ const {name, email, message} = formFields;
 
 
     return(
-        <section className="bg-light p-10" id="contact">
+        <section className="bg-light p-10" id="portfolio-contact">
             <div className="py-10">
                 <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>
             <div className="w-full md:w-1/2 m-auto">
-                <form onSubmit="submit" name="contact" method="POST" data-netlify="true">
+                <form 
+                    onSubmit="submit" 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify="true">
                 <FormInput type="text" value={name} label="Name" name="name" placeholder="John Doe" onChange={handleChange}/>
                 <FormInput type="email" value={email} label="Email" name="email" placeholder="example@gmail.com" onChange={handleChange}/>
                 <MultiLineInput value={message} label="Message" name="message" placeholder="Type your message here" onChange={handleChange}/>
