@@ -22,10 +22,10 @@ export const projects = [
       "Stripe",
     ],
     features: [
-      "Randomly generated words",
-      "On-screen keyboard with dynamic colors",
-      "Input validation",
-      "Multiple games per day",
+      "Email and Google authentication",
+      "Shopping cart",
+      "Pull in products from Firebase",
+      "Stripe payments",
     ],
     gitHubUrl: "https://github.com/mama4294/ecommerce",
     liveUrl: "https://sprightly-lokum-7b8361.netlify.app",
@@ -72,7 +72,7 @@ export const projects = [
     ],
     technologies: ["HTML", "Vanilla JavaScript", "CSS", "JQuery"],
     gitHubUrl: "https://github.com/mama4294/Engineering-Toolbox",
-    liveUrl: "https://matthewmalone.com",
+    liveUrl: "https://lambent-chebakia-e828e4.netlify.app/",
     pictures: [
       "/toolbox-1.png",
       "/toolbox-5.png",
