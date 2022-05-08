@@ -55,7 +55,7 @@ export const Navigation = () => {
 
 const NavItem = ({to, children, scrolledFromTop}) =>{
     return(
-        <Link to={to} offset={-64} spy={true} smooth={true} duration={500} className={`pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
+        <Link to={to} offset={-64} spy={true} smooth={true} duration={500} className={`cursor-pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
         {children}
         </Link>
     )
@@ -63,7 +63,7 @@ const NavItem = ({to, children, scrolledFromTop}) =>{
 
 const MobileNavItem = ({to, children, scrolledFromTop, onClick}) =>{
   return(
-      <Link onClick={onClick} to={to} offset={-272} spy={true} smooth={true} duration={500} className={`block pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
+      <Link onClick={onClick} to={to} offset={-272} spy={true} smooth={true} duration={500} className={`block cursor-pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
       {children}
       </Link>
   )
