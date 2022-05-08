@@ -1,9 +1,9 @@
 
 import { useNavigate, useParams } from 'react-router-dom'
 import {projects} from "../data/data"
-import  Carousel  from "../components/Carousel"
 import {SkillItem} from "../components/SkillItem" 
 import {SkillList} from "../components/SkillList" 
+import { Carousel } from '../components/Carousel'
 
 export const ProjectDetails = () => {
     let navigate = useNavigate();
@@ -58,7 +58,6 @@ export const ProjectDetails = () => {
           <h1 className='text-lg text-primary'>Features</h1>
           {features.map((feature,index) => <SkillItem key={index}>{feature}</SkillItem>)}
           </SkillList>} 
-
           <Carousel images={pictures}/>
         </main>
    
