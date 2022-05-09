@@ -5,6 +5,7 @@ import {SkillItem} from "../components/SkillItem"
 import {SkillList} from "../components/SkillList" 
 import { Carousel } from '../components/Carousel'
 import { PageNotFound } from './PageNotFound'
+import { ScrollToTop } from '../helpers/helper-functions'
 
 export const ProjectDetails = () => {
     let navigate = useNavigate();
@@ -21,6 +22,7 @@ export const ProjectDetails = () => {
 
 
   return (
+    <ScrollToTop>
     <section className="bg-light p-4 pb-10 min-h-screen">
         <button onClick={handleExit} className="ml-auto">
             <svg
@@ -69,6 +71,7 @@ export const ProjectDetails = () => {
    
     </div>
 </section>
+    </ScrollToTop>
   )
 }
 

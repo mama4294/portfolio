@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router";
 
 export const useEventLister = (eventName, handler, element = window) => {
   const savedHandler = useRef();
@@ -20,4 +21,13 @@ export const useEventLister = (eventName, handler, element = window) => {
       element.removeEventListener(eventName, eventListener);
     };
   }, [eventName, element]);
+};
+
+export const ScrollToTop = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>;
 };
