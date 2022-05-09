@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { Link, animateScroll as scroll} from 'react-scroll'
-import { Hamburger } from '../components/Hamburger';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MenuToggle } from '../components/MenuToggle';
+
+const menuItems = [
+  {title:"Home", to:"home"},
+  {title:"Projects", to:"projects"},
+  {title:"Skills", to:"skills"},
+  {title:"About", to:"about"},
+  {title:"Contact", to:"contact"},
+]
 
 export const Navigation = () => {
     const [scrolledFromTop, setScrolledFromTop] = useState(false);
@@ -13,7 +22,6 @@ export const Navigation = () => {
         } else {
           setScrolledFromTop(false);
         }
-        // console.log(window.scrollY)
       };
       
       //Determine if the nav should change colors on scroll
@@ -29,26 +37,41 @@ export const Navigation = () => {
         <div className="hidden sm:block mx-auto px-4 md:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
                 <ul>
-                <NavItem to="home" scrolledFromTop={scrolledFromTop}>Home</NavItem>
-                <NavItem to="projects" scrolledFromTop={scrolledFromTop}>Projects</NavItem>
-                <NavItem to="skills" scrolledFromTop={scrolledFromTop}>Skills</NavItem>
-                <NavItem to="about" scrolledFromTop={scrolledFromTop}>About</NavItem>
-                <NavItem to="contact" scrolledFromTop={scrolledFromTop}>Contact</NavItem>
+                {menuItems.map((item, i) =>{
+                      const {title, to} = item;
+                      return(
+                        <NavItem key={i} to={to} scrolledFromTop={scrolledFromTop}>{title}</NavItem>
+                      )
+                    })}
                 </ul>
             </div>
         </div>
         {/* Mobile Menu */}
-        <div className='sm:hidden mx-auto ml-auto'>
-                <Hamburger isOpen={mobileMenuOpen} onClick={toggleMobileMenu} color={scrolledFromTop ? "text-primary" : "text-white"}/>
-                {mobileMenuOpen && 
-                <ul className='px-2 pb-3 space-y-1 sm:px-3'>
-                  <MobileNavItem to="home" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Home</MobileNavItem>
-                  <MobileNavItem to="projects" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Projects</MobileNavItem>
-                  <MobileNavItem to="skills" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Skills</MobileNavItem>
-                  <MobileNavItem to="about" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>About</MobileNavItem>
-                  <MobileNavItem to="contact" scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>Contact</MobileNavItem>
-                </ul>}
-            </div>
+        <AnimatePresence>
+          <motion.div 
+            className='sm:hidden mx-auto ml-auto'
+            exit={{
+              width: 0,
+              transition: { delay: 3, duration: 0.3 }
+            }}
+            >
+            <MenuToggle toggle={toggleMobileMenu} isOpen={mobileMenuOpen} color={scrolledFromTop ? "text-primary" : "text-white"}/>
+            {
+            mobileMenuOpen && 
+            <motion.ul 
+              className='px-2 pb-3 space-y-1 sm:px-3'
+            >
+                {menuItems.map((item, i) =>{
+                  const {title, to} = item;
+                  return(
+                    <MobileNavItem key={i} to={to} i={i} isOpen={mobileMenuOpen} scrolledFromTop={scrolledFromTop} onClick={toggleMobileMenu}>{title}</MobileNavItem>
+                  )
+                })}
+
+            </motion.ul>
+            }
+        </motion.div>
+      </AnimatePresence>
     </nav>
   )
 }
@@ -61,11 +84,18 @@ const NavItem = ({to, children, scrolledFromTop}) =>{
     )
 }
 
-const MobileNavItem = ({to, children, scrolledFromTop, onClick}) =>{
+const MobileNavItem = ({to, children, scrolledFromTop, i, onClick}) =>{
   return(
-      <Link onClick={onClick} to={to} offset={-272} spy={true} smooth={true} duration={500} className={`block cursor-pointer px-3 py-2 rounded-md text-sm font-medium ease-in-out duration-300  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
+    <motion.li
+      initial={{ opacity: 0, x:100 }}
+      whileInView={{ opacity: 1, x:0 }}
+      transition={{type:'spring', duration: 1, bounce: 0.3, delay: i * 0.025}}
+      whileTap={{ scale: 0.95 }}
+    >
+      <Link onClick={onClick} to={to} offset={-272} spy={true} smooth={true} duration={500} className={`block cursor-pointer px-3 py-2 rounded-md text-sm font-medium  ${scrolledFromTop ? "text-default hover:text-primary" : "text-inverted hover:text-white"} `}>
       {children}
       </Link>
+    </motion.li>
   )
 }
 

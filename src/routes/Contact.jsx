@@ -2,6 +2,7 @@ import { useState } from "react"
 import { FormInput } from "../components/FormInput"
 import { MultiLineInput } from "../components/MultiLineInput"
 import { Button } from "../components/Button"
+import { motion } from "framer-motion"
 export const Contact = () =>{
     const defaultFormFields={
         name:"",
@@ -22,7 +23,13 @@ const {name, email, message} = formFields;
             <div className="py-10">
                 <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>
-            <div className="w-full md:w-1/2 m-auto">
+            <motion.div 
+                className="w-full md:w-1/2 m-auto"
+                initial={{ opacity: 0, y:100 }}
+                whileInView={{ opacity: 1, y:0 }}
+                transition={{type:'spring', duration: 1, bounce: 0.3 }}
+                viewport={{ once: true }}
+                >
                 <form 
                     name="portfolio-contact" 
                     method="POST" 
@@ -44,7 +51,7 @@ const {name, email, message} = formFields;
                 <MultiLineInput value={message} label="Message" name="message" placeholder="Type your message here" onChange={handleChange}/>
                 <Button type="form">Send Message</Button>
                 </form>
-            </div>
+            </motion.div>
         </section>
     )
 }
