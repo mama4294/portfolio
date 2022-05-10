@@ -25,9 +25,9 @@ export const Projects = () => {
         <h1 className="text-primary text-4xl text-center m-4">Projects<span className="text-default">.</span></h1>
         <ProjectFilterSelector items={items} projectFilter={projectFilter} handleClick={handleClick} />
           <div className="flex flex-wrap justify-center">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project,index) => (
                 <div className="m-4" key={project.id}>
-                    <ProjectCard project={project}/>
+                    <ProjectCard project={project} i={index}/>
                 </div>
             ))}
           </div>
@@ -49,13 +49,15 @@ export const Projects = () => {
     )
   }
 
-  const ProjectCard = ({project}) => {
+  const ProjectCard = ({project, i}) => {
     const navigate = useNavigate()
     const handleClick = () =>{
       navigate(`../${project.title}`)
     }
+    const animateInt = i%2===0?1:-1;
     const {pictures, title} = project
     let picture = example
+
 
     if (pictures !== undefined && pictures.length){
       picture = pictures[0]
@@ -63,10 +65,10 @@ export const Projects = () => {
       return (
           <motion.button className="group pointer w-64 relative bg-primary p-4 text-white rounded-md" onClick={handleClick}     
           layout
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, x:-100*animateInt, y:100}}
+          whileInView={{ opacity: 1, x:0, y:0 }}
+          transition={{type:'spring', duration: 0.5, bounce: 0.3, delay: 0.05*i }}
+          viewport={{ once: true }}
           >
               <div className="p-4">
                 <img className="rounded-md m-auto h-64 w-auto group-hover:scale-110" src={picture ? process.env.PUBLIC_URL + picture : example} alt="site" />
