@@ -262,7 +262,22 @@ export const projects = [
     id: 10,
     title: "Inventory Management",
     type: "Mobile",
+    details:
+      "I worked for a factory which required a system for tracking spare parts. Sometimes spare parts would be out of stock because there was no system to track the inventory. I developed this app to help the factory track and maintain inventory. It included location tracking, inventory management, and equipment failure history",
     description: "A management app for a factory's inventory",
+    technologies: ["Microsoft PowerApps", "SharePoint", "PowerBi"],
+    contrubutors: "I developed and deployed this app on my own.",
+    features: [
+      "Add parts to inventory",
+      "Remove parts from inventory",
+      "Create new part",
+      "Auto part number generation",
+      "Sort by number, equipment, location, make, vendor, or category",
+      "Critical parts",
+      "Low inventory warnings",
+      "Equipment history",
+      "Supply chain PO requests",
+    ],
     pictures: [
       "/inventory-2.png",
       "/inventory-1.png",
