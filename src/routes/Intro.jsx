@@ -32,41 +32,6 @@ export const Intro = () => {
     const engineeringTypes = ["Process", "Controls", "Software"]
     const [index, setIndex] = useState(0);
 
-    const variants = {
-      enter: {
-        y: -100,
-        opacity: 0
-      },
-      center: {
-        y: 0,
-        opacity: 1
-      },
-      exit: {
-        y: 100,
-        opacity: 0
-      },
-    };
-
-    // const variants = {
-    //   enter: direction => {
-    //     return {
-    //       y: -20,
-    //       opacity: 0
-    //     };
-    //   },
-    //   center: {
-    //     zIndex: 1,
-    //     y: 0,
-    //     opacity: 1
-    //   },
-    //   exit: direction => {
-    //     return {
-    //       zIndex: 0,
-    //       opacity: 0
-    //     };
-    //   }
-    // };
-
     useEffect(() => {
       setTimeout(() => {
         let next = index + 1;
@@ -79,22 +44,16 @@ export const Intro = () => {
   
     return (
       <div className="pb-4">
-        <AnimatePresence>
-          <p className="text-inverted">A <motion.span
-            variants={variants}
+          <p className="text-inverted">A <motion.div
             key={index}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{type:'spring', duration: 1, bounce: 0.3 }}
-            // transition={{
-            //   y: { type: "spring", stiffness: 300, damping: 200 },
-            //   opacity: { duration: 0.5 }
-            // }}
+            className="inline-block"
+            initial={{ y: -50, x:0, opacity: 0 }}
+            animate={{ y: 0,x:0, opacity: 1 }}
+            exit={{ y: 100,x:0, opacity: 0 }}
+            transition={{type:'spring', duration: 0.5, bounce: 0.3, delay: 0 }}
           >
             {engineeringTypes[index]}
-          </motion.span> Engineer</p>
-        </AnimatePresence>
+          </motion.div> Engineer</p>
       </div>
     );
   };
