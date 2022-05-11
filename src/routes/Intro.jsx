@@ -39,21 +39,21 @@ export const Intro = () => {
           next = 0;
         }
         setIndex(next);
-      }, 3 * 1000);
+      }, 5 * 1000);
     }, [index, setIndex]);
   
     return (
       <div className="pb-4">
-          <p className="text-inverted">A <motion.div
+          <p className="text-inverted">A <motion.span
             key={index}
             className="inline-block"
             initial={{ y: -50, x:0, opacity: 0 }}
             animate={{ y: 0,x:0, opacity: 1 }}
             exit={{ y: 100,x:0, opacity: 0 }}
-            transition={{type:'spring', duration: 0.5, bounce: 0.3, delay: 0 }}
+            transition={{type:'spring', duration: 1, bounce: 0.3, delay: 0 }}
           >
             {engineeringTypes[index]}
-          </motion.div> Engineer</p>
+          </motion.span> Engineer</p>
       </div>
     );
   };
