@@ -26,12 +26,9 @@ const Home = () => {
       <Navigation />
       <main>
         <Intro />
-        <Wave type={WAVE_TYPE.base} className={"text-primary"} />
+        <Wave type={WAVE_TYPE.top} className={"text-primary"} />
         <Projects />
-        <Wave
-          type={WAVE_TYPE.base}
-          className={"text-primary origin-center rotate-180"}
-        />
+        <Wave type={WAVE_TYPE.bottom} className={"text-primary"} />
         <Skills />
         <Tilt className={"bg-dark text-primary"} />
         <About />
