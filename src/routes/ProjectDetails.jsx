@@ -26,7 +26,7 @@ export const ProjectDetails = () => {
     <section className="bg-light p-4 pb-10 min-h-screen">
         <button onClick={handleExit} className="ml-auto">
             <svg
-            className="h-8 w-8 text-default"
+                className="h-8 w-8 text-default"
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 stroke="currentColor"

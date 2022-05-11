@@ -24,7 +24,7 @@ const {name, email, message} = formFields;
                 <h1 className="text-primary text-4xl text-center">Contact<span className="text-default">.</span></h1>
             </div>
             <motion.div 
-                className="w-full md:w-1/2 m-auto"
+                className="w-full md:w-1/2 m-auto max-w-5xl"
                 initial={{ opacity: 0, y:100 }}
                 whileInView={{ opacity: 1, y:0 }}
                 transition={{type:'spring', duration: 1, bounce: 0.3 }}
