@@ -14,7 +14,7 @@ export const About = () => {
               transition={{type:'spring', duration: 2, bounce: 0.3 }}
               viewport={{ once: true }}
             >
-              <p className="text-white">Hi, i'm Matthew Malone, a chemical engineer by training with a passion for coding. I began in industrial automation by programming automated sequences for the food and beverage industry. I built mobile applications and dashboards to report on plant metrics. Since then, I moved into front-end web development and enjoy making clean and functional websites.</p>
+              <p className="text-white">Hi, i'm Matthew Malone, a chemical engineer by training with a passion for coding. I began in industrial automation by programming automated sequences for the food and beverage industry. I built mobile applications and dashboards to report on plant metrics. Since then, I focused on software engineering and enjoy developing clean and functional code.</p>
             </motion.div>
       </div>
     </section>

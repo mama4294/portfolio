@@ -116,7 +116,7 @@ export const projects = [
     type: "Industrial Automation",
     description: "Integration of a production centrifuge with a plant DCS",
     details:
-      "A disk stack centrifuge continously separates a feed slurry into separate liquid and solid stream. This $250k centrifuge can be operated from the factory floor but I integrated it with the factory's local control system so it could be run remotely from the factory control room.",
+      "A disk stack centrifuge continously separates a feed slurry into separate liquid and solid stream. This $400k centrifuge can be operated from the factory floor but I integrated it with the factory's local control system so it could be run remotely from the factory control room.",
     contrubutors:
       "I integrated all tags into the local control system and designed the human-machine interface (HMI) to control the centrifuge. I commissioned it with engineers and operators on the factory floor.",
     technologies: [

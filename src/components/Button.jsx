@@ -4,8 +4,8 @@ export const Button = ({ children, selected, onClick, type,}) => {
         let style = ''
         switch (type) {
           case 'selector':
-            style = `pointer px-4 py-2 m-2 rounded-md ${
-                selected ? "bg-primary text-white" : "text-base"
+            style = `pointer px-4 py-2 m-2 rounded-md shadow-md ${
+                selected ? "bg-primary text-white" : "text-base hover:bg-light"
               }`
             break
             case 'form':
